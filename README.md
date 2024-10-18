@@ -1,4 +1,4 @@
-# PFA Project: Gym Management Platform
+# Go titans Project: Gym Management Platform
 
 ## Description
 This project is a platform for gym users to check class availability and request memberships online. The platform simplifies the participation process and enhances the user experience, addressing the growing demand for fitness and healthy living.
