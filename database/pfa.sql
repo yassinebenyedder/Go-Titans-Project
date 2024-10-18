@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2024 at 10:34 PM
+-- Generation Time: Oct 18, 2024 at 12:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -62,9 +62,9 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`article_id`, `article`, `admin_id`) VALUES
-(1, ' salem oue un rle central dans l e  maintien d\'une bonne santé. En privilégiant une alimentation riche en fruits, légumes, céréales complètes et sources de protéines maigres, on fournit à notre corps les nutriments essentiels dont il a besoin pour fonctionner de manière optimale. De plus, une bonne hydratation est cruciale pour maintenir le bon fonctionnement des organes et des systèmes corporels.', 2),
-(2, ' salem oue un rle central dans l e  maintien d\'une bonne santé. En privilégiant une alimentation riche en fruits, légumes, céréales complètes et sources de protéines maigres, on fournit à notre corps les nutriments essentiels dont il a besoin pour fonctionner de manière optimale. De plus, une bonne hydratation est cruciale pour maintenir le bon fonctionnement des organes et des systèmes corporels.', 2),
-(3, ' salem oue un rle central dans l e  maintien d\'une bonne santé. En privilégiant une alimentation riche en fruits, légumes, céréales complètes et sources de protéines maigres, on fournit à notre corps les nutriments essentiels dont il a besoin pour fonctionner de manière optimale. De plus, une bonne hydratation est cruciale pour maintenir le bon fonctionnement des organes et des systèmes corporels.', 2);
+(1, 'Une bonne nutrition est essentielle pour maintenir la santé, soutenir la croissance et prévenir les maladies. Une alimentation équilibrée fournit au corps les nutriments clés : glucides pour l\'énergie, protéines pour la réparation des tissus, graisses saines pour la protection des organes, vitamines et minéraux pour le bon fonctionnement du corps, et eau pour l\'hydratation. Manger une variété d\'aliments complets, comme des fruits, légumes, protéines maigres et céréales complètes, favorise le bien-être général et renforce l\'immunité.', 2),
+(2, 'Le fitness est crucial pour le bien-être physique et mental. L\'exercice régulier renforce les muscles, améliore la santé cardiovasculaire, augmente l\'endurance et aide à gérer le poids. Il libère également des endorphines, améliorant l\'humeur et réduisant le stress. Une routine équilibrée comprend des exercices cardio, de musculation et de flexibilité. Que ce soit par la course, la musculation ou le yoga, rester actif favorise un meilleur sommeil, une immunité renforcée et une vitalité générale.', 2),
+(3, 'Le sport joue un rôle essentiel dans le maintien de la santé physique et mentale. Pratiquer une activité physique régulière renforce le cœur, améliore la circulation sanguine et aide à prévenir des maladies comme l\'hypertension et le diabète. En plus de renforcer les muscles et les os, le sport favorise une meilleure gestion du poids et réduit le stress. Il améliore également la qualité du sommeil et booste le système immunitaire. Intégrer le sport dans la vie quotidienne contribue à une meilleure longévité et à un bien-être général durable.', 2);
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,8 @@ INSERT INTO `clients` (`client_id`, `user_id`) VALUES
 (30, 63),
 (31, 64),
 (33, 80),
-(34, 81);
+(34, 81),
+(35, 86);
 
 -- --------------------------------------------------------
 
@@ -109,15 +110,11 @@ CREATE TABLE `cours` (
 
 INSERT INTO `cours` (`cour_id`, `nom`, `jour`, `horaire`, `nb max`, `nb act`, `trainer_id`) VALUES
 (71, 'kick-boxing', 'jeudi', '12:00:00', 2, 2, 30),
-(72, 'dance orientale', 'mardiiiiiiii', '13:00:00', 10, 1, 31),
-(74, 'gymnastic', 'dimanche', '15:00:00', 10, 0, 31),
-(75, 'spriiii', 'mardi', '13:00:00', 22, 0, 30),
-(76, 'musculation', 'jeudi', '12:00:00', 10, 2, 31),
-(80, 'sprinteee', 'jeudi', '12:00:00', 12, 0, 30),
-(81, 'sppppp', 'jeunecne', '12:00:00', 12, 0, 30),
-(82, 'yasedne', 'dednhedne', '12:00:00', 22, 0, 30),
-(83, 'dfghjkl', 'cvghjk', '12:00:00', 23, 0, 30),
-(84, 'hdnhdncd', 'jndcjnc', '12:00:00', 22, 0, 30);
+(75, 'sprint', 'mardi', '13:00:00', 22, 1, 30),
+(82, 'musclation', 'mercredi', '12:00:00', 22, 1, 30),
+(83, 'cardio', 'lundi', '12:00:00', 23, 1, 30),
+(84, 'yoga', 'samedi', '12:00:00', 22, 1, 30),
+(89, 'musclation', 'mardi', '13:00:00', 2, 0, 37);
 
 -- --------------------------------------------------------
 
@@ -137,8 +134,11 @@ CREATE TABLE `inscription` (
 
 INSERT INTO `inscription` (`inscription_id`, `client_id`, `cour_id`) VALUES
 (84, 31, 75),
-(85, 31, 76),
-(90, 33, 71);
+(90, 33, 71),
+(91, 30, 75),
+(93, 35, 84),
+(94, 35, 82),
+(95, 35, 83);
 
 -- --------------------------------------------------------
 
@@ -158,8 +158,10 @@ CREATE TABLE `tarifs` (
 --
 
 INSERT INTO `tarifs` (`Id`, `period`, `Tarifs par personne`, `admin_id`) VALUES
-(38, '3 Mois', '190 Dt', 8),
-(39, '1 Mois', '90 Dt', 2);
+(39, '1 Mois', '90 DT', 2),
+(41, '2 Mois', '140 DT', 2),
+(43, '3 Mois', '190 DT', 2),
+(44, '6 Mois', '360 DT', 2);
 
 -- --------------------------------------------------------
 
@@ -178,8 +180,9 @@ CREATE TABLE `trainers` (
 
 INSERT INTO `trainers` (`trainer_id`, `user_id`) VALUES
 (30, 65),
-(31, 66),
-(35, 82);
+(35, 82),
+(36, 84),
+(37, 85);
 
 -- --------------------------------------------------------
 
@@ -200,20 +203,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `typee`) VALUES
-(54, 'monir', 'monir@gmail.com', '$2y$10$3Yz5x9mm7z13vqadOobPn.ris.fWKz7jjezHb2mO5a4RxF1iMlc6W', 'admin'),
+(54, 'monir', 'monir555@gmail.com', 'azertyui', 'admin'),
 (55, 'yassinee', 'benyeddjcdjncderyassine7@gmail.com', '$2y$10$gl071EQ7XqsMFpIjM4Jzze7oKxXuJzfcEs0q6NPXD5LMDmRrI0Gz2', 'admin'),
 (56, 'nacerr', 'nacer@gmail.com', '$2y$10$LQ3qJszHVTEHvD6tfTv.p.lPFkwWxNtaJaa8kDHTe0hDXnpTsJwry', 'admin'),
 (63, 'hamza', 'hamza@gmail.com', '$2y$10$DCFVGUelnKJFrabRxdNIBeB9.LlOZS.dxslUXP.MIRmizXySr/UJy', 'client'),
 (64, 'aziz', 'aziz@gmail.com', 'azertyui', 'client'),
 (65, 'yassine', 'hamzewi@gmail.com', 'azertyui', 'trainer'),
-(66, 'mo7sen', 'mohsen@gmail.com', '$2y$10$Kr6JYvWKA6Hbpm7rkjoA7.5.O0skck93dJsmR5oye0f9CjVAsoTL6', 'trainer'),
 (69, 'ayoub', 'ayoub@gmail.com', '$2y$10$..V0yKso/5n9KlEg0HUkEO/S4Nb3xMXntAxrRB3TblAqHAUNKeDXK', 'admin'),
 (71, 'mohamed', 'mohamed@gmail.com', 'azertyui', 'admin'),
 (72, 'hamoda', 'hamoda@gmail.com', '$2y$10$HxhMQXHkGCK17hE2r9Hh9OQEn8GovjIJplGzvy2LJbCicn4N4MNMi', 'admin'),
 (80, 'nimo', 'nimo@gmail.com', '$2y$10$ogQn0FLqw3GUatzyyJIys.PNGZyF7yzGQ3Ow8L1pB.HkWX8Ej2kQa', 'client'),
 (81, 'yasireeeeee', 'yasir@gmail.com', 'azertyui', 'client'),
 (82, 'hamza', 'hamza1@gmail.com', 'azertyui', 'trainer'),
-(83, 'nourchene', 'nourchen@gmail.com', 'azertyui', 'admin');
+(83, 'nourchene', 'nourchen@gmail.com', 'azertyui', 'admin'),
+(84, 'monir', 'monir55h5@gmail.com', 'azertyui', 'trainer'),
+(85, 'aloi', 'aloi@gmail.com', '$2y$10$.PnXnCEYF02QYbtvy7ST/e6cKzheZjDtTSJz0zmMOWl5DBQ0TC/f.', 'trainer'),
+(86, 'yassine', 'yassine@gmail.com', '$2y$10$mX8WdnKFj3dFLjv9sOgLm.4C1D4J9ONbWeluVMf2sucCXrvLY6hHW', 'client');
 
 --
 -- Indexes for dumped tables
@@ -295,37 +300,37 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `cours`
 --
 ALTER TABLE `cours`
-  MODIFY `cour_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `cour_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `inscription`
 --
 ALTER TABLE `inscription`
-  MODIFY `inscription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `inscription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `tarifs`
 --
 ALTER TABLE `tarifs`
-  MODIFY `Id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `Id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-  MODIFY `trainer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `trainer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- Constraints for dumped tables
