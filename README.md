@@ -74,8 +74,10 @@ You have two options for installing or running the desktop app:
 
 ## Usage
 1. Open the web app at `http://localhost/web-app/View/acceuil.php`.
-2. Sign up or log in to view class availability and make membership requests.
-3. Use the desktop app for additional functionalities like trainer and client management, creating new admins and updating the articles and the prices table in the website.
+2. Sign up or log in as client to view class availability and make membership requests.
+3. Sign up or log in as trainer to Create new classes and track how many participants will attend.
+4. log in as admin to manage almost every aspect in the website
+5. Use the desktop app for additional functionalities like trainer and client management, creating new admins and updating the articles and the prices table in the website.
 
 ## Documentation
 - Refer to the `/docs` folder for the user manuals:
