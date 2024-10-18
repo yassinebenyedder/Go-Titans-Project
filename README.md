@@ -36,17 +36,16 @@ This project is a platform for gym users to check class availability and request
 
 1. **Install XAMPP**:
    - Download and install XAMPP from [here](https://www.apachefriends.org/index.html).
-
 2. **Set up the database**:
    - Open XAMPP and start **Apache** and **MySQL**.
    - Go to `http://localhost/phpmyadmin`.
-   - Create a new user (username:admin password:admin).
-   - Create a new database (e.g., `pfa`).
+   - import user.sql file to create the admin user from `\Go-Titans-Project-main\database`
+   - Create a new database (`pfa`).
    - Import the SQL file located in the `/database` folder (`pfa.sql`) into the newly created database.
 
 3. **Set up the web app**:
-   - Copy the entire `/website` folder.
-   - Navigate to the XAMPP installation directory, find the `htdocs` folder (usually located at `C:\xampp\htdocs`), and paste the `/website` folder there.
+   - Copy the entire `/web-app` folder.
+   - Navigate to the XAMPP installation directory, find the `htdocs` folder (usually located at `C:\xampp\htdocs`), and paste the `web-app` folder there.
 
 4. **Start the web app**:
    - Open your browser and go to `http://localhost/web-app/View/acceuil.php` to access the web application.
